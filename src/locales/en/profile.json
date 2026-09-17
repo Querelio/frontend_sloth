@@ -1,0 +1,33 @@
+{
+  "form": {
+    "firstNameLabel": "First name",
+    "lastNameLabel": "Last name",
+    "emailLabel": "Email",
+    "passwordLabel": "New password",
+    "passwordHint": "Leave blank to keep your current password.",
+    "confirmPasswordLabel": "Confirm password",
+    "submitUpdate": "Save changes"
+  },
+  "validation": {
+    "firstNameRequired": "First name is required",
+    "lastNameRequired": "Last name is required",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Enter a valid email address",
+    "passwordMin": "Password must be at least 8 characters",
+    "passwordTooLong": "Password cannot exceed 128 characters",
+    "passwordMismatch": "Passwords do not match.",
+    "nameInvalid": "Use only letters, spaces, apostrophes, or hyphens",
+    "tooLong": "This value is too long",
+    "htmlNotAllowed": "HTML and control characters are not allowed"
+  },
+  "toast": {
+    "updateSuccess": "Profile updated successfully"
+  },
+  "errors": {
+    "loadFailed": "Could not load your profile. Please try again.",
+    "generic": "Something went wrong. Please try again."
+  },
+  "roles": {
+    "trainer": "Trainer"
+  }
+}

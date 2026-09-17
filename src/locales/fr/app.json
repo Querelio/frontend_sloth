@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "institutions": "Établissements",
+    "classes": "Classes",
+    "contracts": "Contrats",
+    "agenda": "Agenda",
+    "sessions": "Sessions"
+  },
+  "header": {
+    "searchPlaceholder": "Rechercher…",
+    "role": "Formateur",
+    "logout": "Se déconnecter",
+    "settings": "Paramètres"
+  },
+  "pages": {
+    "institutions": "Établissements",
+    "institutionNew": "Nouvel établissement",
+    "institutionEdit": "Modifier l'établissement",
+    "classes": "Classes",
+    "classNew": "Nouvelle classe",
+    "classEdit": "Modifier la classe",
+    "contracts": "Contrats",
+    "contractNew": "Nouveau contrat",
+    "contractEdit": "Modifier le contrat",
+    "agenda": "Agenda",
+    "sessions": "Sessions",
+    "sessionNew": "Nouvelle session",
+    "sessionEdit": "Modifier la session",
+    "profile": "Mon profil"
+  },
+  "theme": {
+    "light": "Mode clair",
+    "dark": "Mode sombre"
+  },
+  "validation": {
+    "phoneInvalid": "Entrez un numéro de téléphone valide",
+    "phoneRequired": "Le numéro de téléphone est requis",
+    "tooLong": "Cette valeur est trop longue"
+  }
+}

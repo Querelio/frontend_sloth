@@ -1,0 +1,61 @@
+import { ROUTES } from '../lib/routes'
+
+export function resolvePageTitleKey(pathname: string): string {
+  if (pathname === ROUTES.INSTITUTIONS) {
+    return 'pages.institutions'
+  }
+
+  if (pathname === ROUTES.INSTITUTION_NEW) {
+    return 'pages.institutionNew'
+  }
+
+  if (pathname.startsWith(`${ROUTES.INSTITUTIONS}/`)) {
+    return 'pages.institutionEdit'
+  }
+
+  if (pathname === ROUTES.CLASSES) {
+    return 'pages.classes'
+  }
+
+  if (pathname === ROUTES.CLASS_NEW) {
+    return 'pages.classNew'
+  }
+
+  if (pathname.startsWith(`${ROUTES.CLASSES}/`)) {
+    return 'pages.classEdit'
+  }
+
+  if (pathname === ROUTES.CONTRACTS) {
+    return 'pages.contracts'
+  }
+
+  if (pathname === ROUTES.CONTRACT_NEW) {
+    return 'pages.contractNew'
+  }
+
+  if (pathname.startsWith(`${ROUTES.CONTRACTS}/`)) {
+    return 'pages.contractEdit'
+  }
+
+  if (pathname === ROUTES.AGENDA) {
+    return 'pages.agenda'
+  }
+
+  if (pathname === ROUTES.SESSIONS) {
+    return 'pages.sessions'
+  }
+
+  if (pathname === ROUTES.SESSION_NEW) {
+    return 'pages.sessionNew'
+  }
+
+  if (pathname.startsWith(`${ROUTES.SESSIONS}/`)) {
+    return 'pages.sessionEdit'
+  }
+
+  if (pathname === ROUTES.PROFILE) {
+    return 'pages.profile'
+  }
+
+  return 'pages.agenda'
+}

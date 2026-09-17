@@ -1,0 +1,30 @@
+---
+description: SaaS input security — typed Zod fields, XSS rejection, JSON-only API payloads
+alwaysApply: true
+---
+# Input Security (SaaS SPA)
+
+The SPA talks to NestJS over JSON only. It never runs SQL. Client-side security is typed payloads, field-level validation, and XSS rejection at input time. The real SQL guard remains parameterized queries / ORM on NestJS.
+
+## Required path
+
+Every user-submitted value goes through React Hook Form + a Zod schema **before** `apiClient`. Reuse builders from `src/lib/validation/` — do not copy regexes or max lengths into feature schemas.
+
+| Concern | Rule |
+|---|---|
+| Types | `email` / `number` / `date` / `time` / `tel` / color must match the schema. Letters are invalid on a number or phone field. |
+| XSS | Never use `dangerouslySetInnerHTML`. Trim strings; reject HTML tags and control characters. Institution colors stay `#RRGGBB` (inline `style` is allowed only for that API value). |
+| SQL / API | JSON body only (`JSON.stringify`). URL resource ids must be finite positive integers (`assertResourceId`). Never interpolate raw user text into a path. Query params go through `URLSearchParams`. |
+| Phone | When a phone field exists, use `type="tel"` + `phoneField()`. |
+
+## Forms
+
+- Validate with Zod field builders (`textField`, `personNameField`, `emailField`, `integerIdField`, `moneyField`, …).
+- Set the matching HTML `type` / `inputMode` / `maxLength` on `Input`.
+- Numbers use `valueAsNumber` and reject `NaN`.
+
+## Do not
+
+- Concatenate user input into SQL, HTML, or API paths.
+- Silently strip tags and send the leftover string as if it were clean — reject the value and show a validation error.
+- Add a new form field without a typed Zod builder and an HTML input type.

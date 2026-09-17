@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "institutions": "Institutions",
+    "classes": "Classes",
+    "contracts": "Contracts",
+    "agenda": "Agenda",
+    "sessions": "Sessions"
+  },
+  "header": {
+    "searchPlaceholder": "Search…",
+    "role": "Trainer",
+    "logout": "Sign out",
+    "settings": "Settings"
+  },
+  "pages": {
+    "institutions": "Institutions",
+    "institutionNew": "New institution",
+    "institutionEdit": "Edit institution",
+    "classes": "Classes",
+    "classNew": "New class",
+    "classEdit": "Edit class",
+    "contracts": "Contracts",
+    "contractNew": "New contract",
+    "contractEdit": "Edit contract",
+    "agenda": "Agenda",
+    "sessions": "Sessions",
+    "sessionNew": "New session",
+    "sessionEdit": "Edit session",
+    "profile": "Profile"
+  },
+  "theme": {
+    "light": "Light mode",
+    "dark": "Dark mode"
+  },
+  "validation": {
+    "phoneInvalid": "Enter a valid phone number",
+    "phoneRequired": "Phone number is required",
+    "tooLong": "This value is too long"
+  }
+}
