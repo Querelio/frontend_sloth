@@ -1,0 +1,5 @@
+# Coolify/Nixpacks only applies the Node major from .nvmrc / engines.
+# Default archive is 22.11.0; Vite 8 and ESLint 10 need >=22.12 / >=22.13.
+# This nixpkgs commit provides Node 22.13.1.
+[phases.setup]
+nixpkgsArchive = "51ad838b03a05b1de6f9f2a0fffecee64a9788ee"
