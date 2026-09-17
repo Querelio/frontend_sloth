@@ -58,11 +58,14 @@ Pages are thin: they wire data (React Query) and render feature components.
 
 ## API & Async State
 
-The SPA talks to NestJS as a **separate origin**. All HTTP goes through `apiClient` in `src/lib/api.ts`, whose base URL is `env.apiUrl` from `VITE_API_URL` (default `http://localhost:3000`). Paths are backend routes (`/auth/login`, `/users`) — never prefix `/api`.
+The SPA talks to NestJS as a **separate origin**. All HTTP goes through `apiClient` in `src/lib/api.ts`, whose base URL is `env.apiUrl` from `API_URL`. Paths are backend routes (`/auth/login`, `/users`) — never prefix `/api`.
 
 - Do not add a Vite or nginx proxy that hides the API behind the SPA origin.
-- Do not hardcode backend hosts in feature `api.ts` files; only `src/lib/env.ts` reads `VITE_API_URL`.
-- `VITE_*` is baked in at build time — change the API URL, then rebuild before preview or deploy.
+- Do not hardcode backend hosts in feature `api.ts` files; only `src/lib/env.ts` reads `API_URL`.
+- Env values come only from `.env`. Never hardcode a fallback or default for any env var in code. If a required variable is missing, fail at load time.
+- `API_URL` is required. Set it in `.env`; `src/lib/env.ts` must throw if it is absent or empty.
+- Vite `envPrefix` is `API_` so the client can read `API_URL` (do not use a `VITE_` prefix).
+- Env vars are baked in at build time — change the API URL, then rebuild before preview or deploy.
 
 Every data-driven view must handle all three states explicitly:
 

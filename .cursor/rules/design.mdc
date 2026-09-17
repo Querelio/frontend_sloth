@@ -20,7 +20,7 @@ Implementation patterns (structure, components, TypeScript) live in `coding-prac
 
 - **TanStack React Query** for server state (queries, mutations, cache, invalidation).
 - API client and query keys in `src/lib/`.
-- Backend URL is absolute (`VITE_API_URL`). The SPA and API are two origins — no same-origin `/api` proxy.
+- Backend URL is absolute (`API_URL` from `.env`, required — no code fallback). The SPA and API are two origins — no same-origin `/api` proxy.
 
 ## Forms
 
